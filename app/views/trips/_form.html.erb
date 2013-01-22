@@ -1,0 +1,56 @@
+<%= form_for @trip, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :place_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :place_id, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :credit_card_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :credit_card_id, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :start_date, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.date_select :start_date, :class => 'date_select' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :end_date, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.date_select :end_date, :class => 'date_select' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :first_name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :first_name, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :last_name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :last_name, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :age, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :age, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :total, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :total, :class => 'number_field' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                trips_path, :class => 'btn' %>
+  </div>
+<% end %>

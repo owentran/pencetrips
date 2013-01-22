@@ -1,4 +1,10 @@
-Penceworld::Application.routes.draw do
+Pencetrips::Application.routes.draw do
+
+  resources :trips
+  resources :packages
+  resources :places
+  
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -48,7 +54,10 @@ Penceworld::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  match '/search'       => 'shopping#search'
+  match '/checkout'     => 'shopping#checkout'
+  match '/confirmation' => 'shopping#confirmation'
+  root :to => 'shopping#index'
 
   # See how all your routes lay out with "rake routes"
 

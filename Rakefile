@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Penceworld::Application.load_tasks
+Pencetrips::Application.load_tasks

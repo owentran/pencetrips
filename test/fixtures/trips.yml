@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  place_id: 1
+  credit_card_id: 1
+  start_date: 2013-01-21
+  end_date: 2013-01-21
+  first_name: MyString
+  last_name: MyString
+  age: 1
+  total: 1
+
+two:
+  place_id: 1
+  credit_card_id: 1
+  start_date: 2013-01-21
+  end_date: 2013-01-21
+  first_name: MyString
+  last_name: MyString
+  age: 1
+  total: 1
