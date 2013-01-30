@@ -4,12 +4,13 @@
 </div>
 
 <dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:country) %>:</strong></dt>
-  <dd><%= @place.country %></dd>
+
   <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
-  <dd><%= @place.name %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:body) %>:</strong></dt>
-  <dd><%= @place.body %></dd>
+  <dd><%= @place.name %></dd>  
+  <dt><strong><%= model_class.human_attribute_name(:depart_at) %>:</strong></dt>
+  <dd><%= @place.depart_at %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:deescription) %>:</strong></dt>
+  <dd><%= @place.description %></dd>
 </dl>
 
 <div class="form-actions">

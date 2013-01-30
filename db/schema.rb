@@ -11,43 +11,31 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130122062323) do
-
-  create_table "credit_cards", :force => true do |t|
-    t.string   "name"
-    t.integer  "amount"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
+ActiveRecord::Schema.define(:version => 20130122055537) do
 
   create_table "packages", :force => true do |t|
-    t.string   "name"
-    t.text     "body"
     t.integer  "place_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.integer  "amount"
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "places", :force => true do |t|
     t.string   "name"
-    t.text     "body"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.string   "country"
+    t.text     "description"
+    t.date     "depart_at"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "trips", :force => true do |t|
     t.integer  "place_id"
-    t.integer  "credit_card_id"
-    t.date     "start_date"
-    t.date     "end_date"
+    t.integer  "package_id"
     t.string   "first_name"
     t.string   "last_name"
-    t.integer  "age"
-    t.integer  "total"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end

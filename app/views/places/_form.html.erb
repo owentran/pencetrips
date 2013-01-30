@@ -1,10 +1,5 @@
 <%= form_for @place, :html => { :class => 'form-horizontal' } do |f| %>
-  <div class="control-group">
-    <%= f.label :country, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :country, :class => 'text_field' %>
-    </div>
-  </div>
+
   <div class="control-group">
     <%= f.label :name, :class => 'control-label' %>
     <div class="controls">
@@ -12,9 +7,16 @@
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :body, :class => 'control-label' %>
+    <%= f.label :description, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_area :body, :class => 'text_area' %>
+      <%= f.text_area :description, :class => 'text_area' %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :depart_at, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.datepicker :depart_at, :class => 'text_field' %>
     </div>
   </div>
 

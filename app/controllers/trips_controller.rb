@@ -1,36 +1,39 @@
 class TripsController < ApplicationController
+ 
   # GET /trips
   # GET /trips.json
   def index
     @trips = Trip.all
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @trips }
     end
   end
 
-  # GET /trips/1
-  # GET /trips/1.json
-  def show
-    @trip = Trip.find(params[:id])
+  def home
+    @places = Place.all
+  end
 
+  def search
+    @place = Place.find(params[:place_id])
+  end
+
+  def checkout
+    @trip = Trip.new
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @trip }
+    end
+  end
+
+  def print
+    @trip = Trip.find(params[:id])
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @trip }
     end
   end
 
-  # GET /trips/new
-  # GET /trips/new.json
-  def new
-    @trip = Trip.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @trip }
-    end
-  end
 
   # GET /trips/1/edit
   def edit
@@ -41,7 +44,6 @@ class TripsController < ApplicationController
   # POST /trips.json
   def create
     @trip = Trip.new(params[:trip])
-
     respond_to do |format|
       if @trip.save
         format.html { redirect_to @trip, notice: 'Trip was successfully created.' }

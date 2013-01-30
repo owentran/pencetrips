@@ -1,6 +1,14 @@
 Pencetrips::Application.routes.draw do
 
-  resources :trips
+  match '/trips/home'       => 'trips#home'
+  match '/trips/search'     => 'trips#search'
+  match '/trips/checkout'   => 'trips#checkout'
+  match '/trips/print'      => 'trips#print'
+
+  root :to => 'trips#home'
+
+
+  resources :trips 
   resources :packages
   resources :places
   
@@ -54,10 +62,6 @@ Pencetrips::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  match '/search'       => 'shopping#search'
-  match '/checkout'     => 'shopping#checkout'
-  match '/confirmation' => 'shopping#confirmation'
-  root :to => 'shopping#index'
 
   # See how all your routes lay out with "rake routes"
 

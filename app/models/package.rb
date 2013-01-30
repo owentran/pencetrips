@@ -1,3 +1,6 @@
 class Package < ActiveRecord::Base
-  attr_accessible :body, :name, :place_id
+
+	belongs_to :place
+
+	attr_accessible :description, :name, :place_id
 end

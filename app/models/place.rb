@@ -1,3 +1,6 @@
 class Place < ActiveRecord::Base
-  attr_accessible :body, :name, :country
+
+	has_many :packages
+
+	attr_accessible :description, :name, :depart_at
 end
