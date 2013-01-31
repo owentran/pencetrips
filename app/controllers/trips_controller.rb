@@ -11,7 +11,7 @@ class TripsController < ApplicationController
   end
 
   def home
-    @places = Place.all
+    @places = Place.order(:name)
   end
 
   def search
@@ -19,19 +19,26 @@ class TripsController < ApplicationController
   end
 
   def checkout
-    @trip = Trip.new
+    @place  = Place.find(params[:place_id])
+    @trip   = Trip.new(params[:trip])
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @trip }
     end
   end
 
+  def confirm
+    @trip = Trip.new(params[:trip])
+    if @trip.save
+      render :print
+    else
+      render :checkout
+    end 
+  end
+
   def print
     @trip = Trip.find(params[:id])
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @trip }
-    end
+    render :action => 'print', :layout => false
   end
 
 

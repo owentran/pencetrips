@@ -13,7 +13,6 @@
     <![endif]-->
 
     <%= stylesheet_link_tag "application", :media => "all" %>
-    <%= javascript_include_tag "application" %>
     <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
   </head>
   <body>
@@ -39,31 +38,22 @@
 
     <div class="container-fluid">
       <div class="row-fluid">
-        <div class="span12">
-            <div class="row">
-              <div class="span12">
-                <img src="/assets/air_hotel_car.png">
-              </div>
-            </div>
+        <div class="container">
+          <div><img src="/assets/air_hotel_car.png"/><br/></div>
           <%= bootstrap_flash %>
           <%= yield %>
+
+          <footer>
+            &copy; 2013 PenceTrips - Around the World. <p class="text-success">For help please contact owen.tran (at) gmail.com</p>
+          </footer>
         </div>
       </div><!--/row-->
-
-      <footer>
-        <blockquote class="span6">
-         <p>The real voyage of discovery consists not in seeking new landscapes, but in having new eyes.</p>
-          <small>Marcel Proust</small>  
-        </blockquote>
-        &copy; 2013 PenceTrips. <p class="muted">For help please contact owen (at) gmail.com</p>
-      </footer>
-
     </div> <!-- /container -->
 
     <!-- Javascripts
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <%= javascript_include_tag "application" %>
-
+    <%= yield(:javascript) %>
   </body>
 </html>

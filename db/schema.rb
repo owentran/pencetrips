@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130122055537) do
+ActiveRecord::Schema.define(:version => 20130131045325) do
 
   create_table "packages", :force => true do |t|
     t.integer  "place_id"
@@ -27,6 +27,13 @@ ActiveRecord::Schema.define(:version => 20130122055537) do
     t.date     "depart_at"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.text     "image"
+    t.text     "package_1"
+    t.text     "image_1"
+    t.text     "package_2"
+    t.text     "image_2"
+    t.text     "package_3"
+    t.text     "image_3"
   end
 
   create_table "trips", :force => true do |t|

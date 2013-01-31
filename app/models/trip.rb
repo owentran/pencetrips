@@ -1,7 +1,6 @@
 class Trip < ActiveRecord::Base
 
-	has_one :place_id
-	has_one :package
+	has_one :place
 
- 	attr_accessible :age, :credit_card_id, :end_date, :first_name, :last_name, :place_id, :start_date, :total
+ 	attr_accessible :first_name, :last_name, :place_id, :package_id
 end

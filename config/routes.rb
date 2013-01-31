@@ -3,7 +3,8 @@ Pencetrips::Application.routes.draw do
   match '/trips/home'       => 'trips#home'
   match '/trips/search'     => 'trips#search'
   match '/trips/checkout'   => 'trips#checkout'
-  match '/trips/print'      => 'trips#print'
+  match '/trips/confirm'    => 'trips#confirm'
+  match '/trips/print/:id'  => 'trips#print'
 
   root :to => 'trips#home'
 

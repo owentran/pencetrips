@@ -12,3 +12,24 @@
  *= require_self
  *= require_tree .
  */
+
+body {
+	background-image:url('/assets/background.jpg');
+}
+
+.searchbox {
+}
+
+.image-package {
+	max-width: 200px;
+	max-height: 150px;
+}
+
+.image-banner {
+	width:800px;
+	height:100px;
+}
+
+.strong {
+	font-weight: bold;
+}
