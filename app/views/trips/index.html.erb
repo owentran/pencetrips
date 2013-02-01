@@ -21,10 +21,12 @@
         <td><%= link_to trip.id, trip_path(trip) %></td>
         <td><%= trip.first_name %></td>
         <td><%= trip.last_name %></td>
-        <td><%= trip.place_id %></td>
+        <td><%= Place.find(trip.place_id).name %></td>
         <td><%= trip.package_id %></td>
         <td><%=l trip.created_at %></td>
         <td>
+          <%= link_to t('.print', :default => t("helpers.links.print")),
+                      "/trips/print/#{trip.id}", :class => 'btn btn-mini' %> 
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_trip_path(trip), :class => 'btn btn-mini' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),

@@ -13,14 +13,6 @@
 
 ActiveRecord::Schema.define(:version => 20130131045325) do
 
-  create_table "packages", :force => true do |t|
-    t.integer  "place_id"
-    t.string   "name"
-    t.text     "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
-
   create_table "places", :force => true do |t|
     t.string   "name"
     t.text     "description"
