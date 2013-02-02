@@ -5,16 +5,7 @@ gem 'thin'
 
 # https://github.com/seyhunak/twitter-bootstrap-rails
 gem 'twitter-bootstrap-rails'
-
-#https://devcenter.heroku.com/articles/paperclip-s3
-gem 'paperclip'
-gem 'aws-sdk'
-
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
 gem 'pg'
-
 
 # Gems used only for assets and not required
 # in production environments by default.
