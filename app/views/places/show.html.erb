@@ -9,7 +9,7 @@
   <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
   <dd><%= @place.name %></dd>  
   <dt><strong><%= model_class.human_attribute_name(:depart_at) %>:</strong></dt>
-  <dd><%=l @place.depart_at %></dd>
+  <dd><%=l @place.depart_at, :format => :ticket %></dd>
   <dt><strong><%= model_class.human_attribute_name(:deescription) %>:</strong></dt>
   <dd><%= @place.description %></dd>
 </dl>

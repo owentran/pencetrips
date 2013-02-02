@@ -13,11 +13,26 @@
  *= require_tree .
  */
 
-html, body {
-	background-image:url('/assets/background.jpg');
-	height: 100%;
+.image-background {
+	background: #000 url('/assets/background.jpg') repeat-x top left;
+	background-size: 100% auto;
 }
 
+.image-package {
+	width: 200px;
+	height: 150px;
+}
+
+.image-banner {
+	width:800px;
+	height:100px;
+}
+
+
+.image-code {
+	width:75px;
+	height:75px;
+}
 .footer {
   position: relative;
   margin-top: 100px; /* negative value of footer height */
@@ -27,16 +42,6 @@ html, body {
 } 
 
 .searchbox {
-}
-
-.image-package {
-	max-width: 200px;
-	max-height: 150px;
-}
-
-.image-banner {
-	width:800px;
-	height:100px;
 }
 
 .strong {

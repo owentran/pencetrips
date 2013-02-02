@@ -17,58 +17,32 @@
   <div class="control-group">
     <%= f.label :description, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_area :description, :class => 'text_area' %>
+      <%= f.text_area :description, :class => 'text_area', :rows => 5 %>
     </div>
   </div>
 
   <div class="control-group">
     <%= f.label :depart_at, :class => 'control-label' %>
     <div class="controls">
-      <%= f.datepicker :depart_at, :class => 'text_field' %>
+      <%= f.datepicker :depart_at, :class => 'text_field', :dateFormat => "yy-mm-dd" %>
     </div>
   </div>
-  
-  <div class="control-group">
-    <%= f.label :package_1, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_area :package_1, :class => 'text_field' %>
-    </div>
-  </div>  
 
-  <div class="control-group">
-    <%= f.label :image_1, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :image_1, :class => 'text_field' %>
-    </div>
-  </div>  
+  <% (1..3).each{|i| %> 
+    <div class="control-group">
+      <%= f.label "package_#{i}", :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_area "package_#{i}", :class => 'text_field', :rows => 5 %>
+      </div>
+    </div>  
 
-<div class="control-group">
-    <%= f.label :package_2, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_area :package_2, :class => 'text_field' %>
-    </div>
-  </div>  
-
-  <div class="control-group">
-    <%= f.label :image_2, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :image_2, :class => 'text_field' %>
-    </div>
-  </div>  
-
-<div class="control-group">
-    <%= f.label :package_3, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_area :package_3, :class => 'text_field' %>
-    </div>
-  </div>  
-
-  <div class="control-group">
-    <%= f.label :image_3, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :image_3, :class => 'text_field' %>
-    </div>
-  </div>  
+    <div class="control-group">
+      <%= f.label "image_#{i}", :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field "image_#{i}", :class => 'text_field' %>
+      </div>
+    </div>  
+  <% } %>
 
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>

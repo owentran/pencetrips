@@ -3,8 +3,8 @@
 	<img class="image-banner" src="<%= @place.image %>">
 </div>
 -->
-<div class="well">
-	<h3><%= @place.name %></h3>
+<div class="well well-small">
+	<h4><%= @place.name %></h4>
 	<%= @place.description %>
 </div>
 
@@ -13,10 +13,10 @@
 	<ul class="thumbnails">
 		<% (1..3).each{|i| %>
 		<li class="span4">
-			<div class="thumbnail well">
+			<div class="thumbnail well-small">
 				<img class="image-package img-rounded" src="<%= @place.send("image_#{i}") %>">
 				<div class="caption">
-                    <h4>Package #<%= i %></h4>
+                    <strong>Package #<%= i %></strong>
                    	<button id="<%= i %>" class="btn btn-danger btn-block">Buy Now</button>
                     <p><%= truncate(@place.send("package_#{i}"), :length => 200) %></p>
                     <p>
@@ -35,7 +35,7 @@
 
 <%= content_for :javascript do %>
 <script type="text/javascript">
-	$('.btn').click(function() {
+	$('.btn-danger').click(function() {
 		$('#package_id').val(this.id);
 		$('#select_form').submit();
 		return false;

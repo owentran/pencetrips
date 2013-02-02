@@ -3,7 +3,7 @@ class TripsController < ApplicationController
   # GET /trips
   # GET /trips.json
   def index
-    @trips = Trip.all
+    @trips = Trip.order("id desc")
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @trips }
@@ -30,15 +30,16 @@ class TripsController < ApplicationController
   def confirm
     @trip = Trip.new(params[:trip])
     if @trip.save
-      render :print
-    else
+      render :template => '/trips/print', :layout => 'print'
+    else    
+      @place  = Place.find(params[:place_id])
       render :checkout
     end 
   end
 
   def print
     @trip = Trip.find(params[:id])
-    render :action => 'print', :layout => false
+    render :template => '/trips/print', :layout => 'print'
   end
 
 

@@ -1,2 +1,35 @@
 
-Print me
+<div class="row well well-small">
+
+	<div class="pull-left">
+		<div>
+			<img src="/assets/air_hotel_car.png"/>
+		</div>
+		<div>
+			<p class="muted">TRAVELER:</p>
+			<h3><%= @trip.first_name %> <%= @trip.last_name %></h3>
+		</div>
+
+		<div>
+			<p class="muted">DESTINATION:</p>
+			<h3><%= @trip.place.name %></h3>
+		</div>
+
+		<div>
+			<p class="muted">TRAVEL DATE:</p>
+			<h3><%=l @trip.place.depart_at, :format => :ticket %></h3>
+		</div>
+	</div>
+
+	<div class="pull-right">
+		<img class="thumbnail image-package" src="<%= @trip.place.send("image_#{@trip.package_id}") %>"/>
+		<!--
+		<img class="image-code" src="/assets/qr_code.jpg"/>
+		<p class="muted">
+			Scan QR Code
+		</p>
+		-->
+	</div>
+
+</div>
+

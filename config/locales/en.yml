@@ -6,6 +6,7 @@ en:
   date:
     formats:
       default: "%Y-%m-%d"
+      ticket: "%A, %B %e, %Y"
   time:
     am: am
     formats:
