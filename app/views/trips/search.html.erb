@@ -12,13 +12,13 @@
 <div class="row-fluid">
 	<ul class="thumbnails">
 		<% (1..3).each{|i| %>
-		<li class="span4">
-			<div class="thumbnail well-small">
+		<li id="<%= i %>" class="span4 option-package">
+			<div class="thumbnail well-small div-package">
 				<img class="image-package img-rounded" src="<%= @place.send("image_#{i}") %>">
 				<div class="caption">
-                    <strong>Package #<%= i %></strong>
-                   	<button id="<%= i %>" class="btn btn-danger btn-block">Buy Now</button>
-                    <p><%= truncate(@place.send("package_#{i}"), :length => 200) %></p>
+                    <strong class="title-package">Package #<%= i %></strong>
+                   	<button class="btn btn-danger btn-block">Buy Now</button>
+                    <p class="text-package"><%= truncate(@place.send("package_#{i}"), :length => 200) %></p>
                     <p>
    
                   </div>
@@ -35,7 +35,7 @@
 
 <%= content_for :javascript do %>
 <script type="text/javascript">
-	$('.btn-danger').click(function() {
+	$('.option-package').click(function() {
 		$('#package_id').val(this.id);
 		$('#select_form').submit();
 		return false;
